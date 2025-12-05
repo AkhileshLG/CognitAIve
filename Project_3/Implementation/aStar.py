@@ -302,7 +302,7 @@ def generateManifest(filename, finalGrid, baseName):
     currTime = datetime.now()
     timeStamp = currTime.strftime("%m_%d_%Y_%H%M")
     
-    saveFilename = f"{baseName}_{timeStamp}.txt"
+    saveFilename = f"{baseName}_{timeStamp}OUTBOUND.txt"
     savePath = os.path.join(desktop, saveFilename)
 
     with open(filename, 'r') as f:
