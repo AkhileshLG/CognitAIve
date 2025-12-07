@@ -405,7 +405,7 @@ def main():
     manifest = input("Enter the manifest filename (e.g., ShipCase5.csv): ").strip()
     now = datetime.now()
     timestamp = now.strftime("%m_%d_%Y_%H%M")
-    log_filename = f"KeoghsPort{timestamp}_{manifest}.txt"
+    log_filename = f"KeoghsPort{timestamp}_{manifest[:-4]}.txt"
     
     # create folder if it no exist
     output_dir = Path("Output")
@@ -486,7 +486,7 @@ def main():
         displayGrid(finalGrid, nanSlots, "Balanced Grid", log_print)
         
         outboundPath = generateManifest(manifest, finalGrid, baseName)
-        log_print(f" File was written to Output directory. {outboundPath}")
+        log_print(f" File was written to Output directory.")
         
         # computationTime = int(time.time() - startTime)
         log_print(f" Program ends. Computation time: {totalCost} minutes")
