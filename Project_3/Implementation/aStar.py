@@ -484,6 +484,22 @@ def main():
             finalGrid[move['to']] = (move['weight'], move['description'])
         
         displayGrid(finalGrid, nanSlots, "Balanced Grid", log_print)
+
+        def log_hide(*args, **kwargs):
+            # Add timestamp to each log entry
+            timestamp_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            msg = " ".join(str(arg) for arg in args)
+            log_entry = f"[{timestamp_str}] {msg}"
+            f.write(log_entry + "\n")
+            f.flush()
+
+        writeComment = input(f"Do you have any comments (y/n): ")
+        log_hide(f" Do you have any comments (y/n): {writeComment}")
+        while writeComment != "n":
+            comment = input(f"Type your comment here: ")
+            log_hide(f" Comment: {comment}")
+            writeComment = input(f"Do you have any comments (y/n): ")
+            log_hide(f" Do you have any comments (y/n): {writeComment}")
         
         outboundPath = generateManifest(manifest, finalGrid, baseName)
         log_print(f" File was written to Output directory.")
