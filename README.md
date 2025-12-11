@@ -45,3 +45,9 @@ Mr.Keogh is looking to take less time to earn more profits; however, each move t
 ### Problem Specification
 
 This project focuses on balancing up to 16 containers placed on an 8×12 ship grid that includes unavailable spaces and layout constraints. Containers can only be moved if no container sits above them, movement outside the grid is allowed only one row above, and unavailable spaces cannot be crossed. A crane positioned at the top center performs all moves, and the total movement distance must be calculated as containers are relocated. The goal is to develop an algorithm that redistributes containers so that the ship’s left and right sides differ in total weight by no more than 10%, while achieving this balance using the fewest moves possible.
+
+### Approach
+
+To balance ship container, we are developing 2 algorithms to solve this:
+1. Greedy
+2. A-star
